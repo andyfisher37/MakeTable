@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IASDataSet" targetNamespace="http://tempuri.org/IASDataSet.xsd" xmlns:mstns="http://tempuri.org/IASDataSet.xsd" xmlns="http://tempuri.org/IASDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IASConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IASConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MakeTable.Properties.Settings.GlobalReference.Default.IASConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AaqqTableAdapter" GeneratorDataComponentClassName="AaqqTableAdapter" Name="Aaqq" UserDataComponentName="AaqqTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IASConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Aaqq.FAMILIYA, Aaqq.IMYA, Aaqq.OTCHECTVO, ZVANIE.VOIN_ZVAN, OFIC_DOL.NAM_OF_DOL, Aaqq.DATA_PRSV, Aaqq.DATA_VDOLZ, Aaqq.KEY_1, Aaqq.OKLAD
+FROM     Aaqq INNER JOIN
+                  ZVANIE ON Aaqq.ZVANIE = ZVANIE.KEY_ZVAN INNER JOIN
+                  OFIC_DOL ON Aaqq.REAL_DOLZN = OFIC_DOL.P3
+WHERE  (Aaqq.DOLZNOST &lt; '800000') AND (Aaqq.ZVANIE NOT IN (0, 99, 20, 40, 60, 100)) AND (Aaqq.FAMILIYA &lt;&gt; '')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FAMILIYA" DataSetColumn="FAMILIYA" />
+              <Mapping SourceColumn="IMYA" DataSetColumn="IMYA" />
+              <Mapping SourceColumn="OTCHECTVO" DataSetColumn="OTCHECTVO" />
+              <Mapping SourceColumn="VOIN_ZVAN" DataSetColumn="VOIN_ZVAN" />
+              <Mapping SourceColumn="NAM_OF_DOL" DataSetColumn="NAM_OF_DOL" />
+              <Mapping SourceColumn="DATA_PRSV" DataSetColumn="DATA_PRSV" />
+              <Mapping SourceColumn="DATA_VDOLZ" DataSetColumn="DATA_VDOLZ" />
+              <Mapping SourceColumn="KEY_1" DataSetColumn="KEY_1" />
+              <Mapping SourceColumn="OKLAD" DataSetColumn="OKLAD" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="IASDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="IASDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="IASDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Aaqq" msprop:Generator_RowEvHandlerName="AaqqRowChangeEventHandler" msprop:Generator_RowDeletedName="AaqqRowDeleted" msprop:Generator_RowDeletingName="AaqqRowDeleting" msprop:Generator_RowEvArgName="AaqqRowChangeEvent" msprop:Generator_TablePropName="Aaqq" msprop:Generator_RowChangedName="AaqqRowChanged" msprop:Generator_UserTableName="Aaqq" msprop:Generator_RowChangingName="AaqqRowChanging" msprop:Generator_RowClassName="AaqqRow" msprop:Generator_TableClassName="AaqqDataTable" msprop:Generator_TableVarName="tableAaqq">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FAMILIYA" msprop:Generator_ColumnPropNameInTable="FAMILIYAColumn" msprop:Generator_ColumnPropNameInRow="FAMILIYA" msprop:Generator_UserColumnName="FAMILIYA" msprop:Generator_ColumnVarNameInTable="columnFAMILIYA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IMYA" msprop:Generator_ColumnPropNameInTable="IMYAColumn" msprop:Generator_ColumnPropNameInRow="IMYA" msprop:Generator_UserColumnName="IMYA" msprop:Generator_ColumnVarNameInTable="columnIMYA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OTCHECTVO" msprop:Generator_ColumnPropNameInTable="OTCHECTVOColumn" msprop:Generator_ColumnPropNameInRow="OTCHECTVO" msprop:Generator_UserColumnName="OTCHECTVO" msprop:Generator_ColumnVarNameInTable="columnOTCHECTVO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VOIN_ZVAN" msprop:Generator_ColumnPropNameInTable="VOIN_ZVANColumn" msprop:Generator_ColumnPropNameInRow="VOIN_ZVAN" msprop:Generator_UserColumnName="VOIN_ZVAN" msprop:Generator_ColumnVarNameInTable="columnVOIN_ZVAN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NAM_OF_DOL" msprop:Generator_ColumnPropNameInTable="NAM_OF_DOLColumn" msprop:Generator_ColumnPropNameInRow="NAM_OF_DOL" msprop:Generator_UserColumnName="NAM_OF_DOL" msprop:Generator_ColumnVarNameInTable="columnNAM_OF_DOL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATA_PRSV" msprop:Generator_ColumnPropNameInTable="DATA_PRSVColumn" msprop:Generator_ColumnPropNameInRow="DATA_PRSV" msprop:Generator_UserColumnName="DATA_PRSV" msprop:Generator_ColumnVarNameInTable="columnDATA_PRSV" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DATA_VDOLZ" msprop:Generator_ColumnPropNameInTable="DATA_VDOLZColumn" msprop:Generator_ColumnPropNameInRow="DATA_VDOLZ" msprop:Generator_UserColumnName="DATA_VDOLZ" msprop:Generator_ColumnVarNameInTable="columnDATA_VDOLZ" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="KEY_1" msprop:Generator_ColumnPropNameInTable="KEY_1Column" msprop:Generator_ColumnPropNameInRow="KEY_1" msprop:Generator_UserColumnName="KEY_1" msprop:Generator_ColumnVarNameInTable="columnKEY_1" type="xs:double" minOccurs="0" />
+              <xs:element name="OKLAD" msprop:Generator_UserColumnName="OKLAD" msprop:Generator_ColumnPropNameInTable="OKLADColumn" msprop:Generator_ColumnPropNameInRow="OKLAD" msprop:Generator_ColumnVarNameInTable="columnOKLAD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
